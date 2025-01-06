@@ -127,9 +127,9 @@ h1 {
     box-shadow: 0 4px 8px var(--shadow-color);
 }
 
-.card.flipped {
+/* .card.flipped {
     transform: rotateY(180deg);
-}
+} */
 
 .card.matched .card-back {
     background: var(--primary-color);
@@ -327,7 +327,7 @@ h1 {
     transition: transform 0.6s;
 }
 
-.card.flipped .card-inner {
+.card.flipped {
     transform: rotateY(180deg);
 }
  
@@ -351,7 +351,7 @@ h1 {
 
 .card-back {
     background: var(--card-color);
-    transform: rotateY(180deg) rotateZ(180deg);
+    transform: rotateY(180deg) ;
     color: var(--text-color);
 }
 
