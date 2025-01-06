@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-wrapper">
+        <header>
+            <h1>Memory Master</h1>
+            <div class="difficulty-selector">
+                <button data-difficulty="easy">Easy</button>
+                <button data-difficulty="medium">Medium</button>
+                <button data-difficulty="hard">Hard</button>
+            </div>
+        </header>
+
+        <div id="registration" class="modal">
+            <div class="modal-content">
+                <h2>Welcome to Memory Master</h2>
+                <div class="form-group">
+                    <label for="username">Enter your name:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="avatar">Select Avatar:</label>
+                    <div class="avatar-selection">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%234CAF50'/></svg>" data-avatar="1">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23FF5722'/></svg>" data-avatar="2">
+                        <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%232196F3'/></svg>" data-avatar="3">
+                    </div>
+                </div>
+                <button id="start-game-button">Start Game</button>
+            </div>
+        </div>
+
+        <main class="container">
+            <section id="game-area">
+                <div class="game-info">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="label">Moves:</span>
+                            <span id="moves">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Time:</span>
+                            <span id="timer">0:00</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Score:</span>
+                            <span id="score">0</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                </div>
+
+                <div id="game-board" class="grid-container hidden"></div>
+
+                <div class="controls hidden">
+                    <button id="pause-button">
+                        <span class="icon">⏸</span>
+                        <span class="text">Pause</span>
+                    </button>
+                    <button id="reset-button">
+                        <span class="icon">🔄</span>
+                        <span class="text">Reset</span>
+                    </button>
+                    <button id="hint-button">
+                        <span class="icon">💡</span>
+                        <span class="text">Hint</span>
+                        <span class="hint-count">3</span>
+                    </button>
+                </div>
+            </section>
+
+            <aside id="leaderboard">
+                <div class="leaderboard-header">
+                    <h2>Leaderboard</h2>
+                    <div class="leaderboard-tabs">
+                        <button class="tab active" data-tab="daily">Daily</button>
+                        <button class="tab" data-tab="weekly">Weekly</button>
+                        <button class="tab" data-tab="all-time">All Time</button>
+                    </div>
+                </div>
+                <ol id="leaderboard-list"></ol>
+            </aside>
+        </main>
+
+        <div id="game-over" class="modal hidden">
+            <div class="modal-content">
+                <h2>Congratulations!</h2>
+                <div class="stats-summary">
+                    <p>Time: <span id="final-time"></span></p>
+                    <p>Moves: <span id="final-moves"></span></p>
+                    <p>Score: <span id="final-score"></span></p>
+                    <div class="achievement" id="achievement"></div>
+                </div>
+                <button id="play-again-button">Play Again</button>
+                <button id="share-button">Share Result</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
